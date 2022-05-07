@@ -1,0 +1,4 @@
+﻿  threads.cpp
+C:\Users\crysi\Desktop\ПМиА\Курсач\Проги\threads\threads\threads.cpp(20,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\crysi\Desktop\ПМиА\Курсач\Проги\threads\threads\threads.cpp(21,24): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  threads.vcxproj -> C:\Users\crysi\Desktop\ПМиА\Курсач\Проги\threads\x64\Debug\threads.exe
