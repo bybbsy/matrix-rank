@@ -1,0 +1,13 @@
+C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cs\matrix-cs\bin\Debug\netcoreapp3.1\matrix-cs.exe
+C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cs\matrix-cs\bin\Debug\netcoreapp3.1\matrix-cs.deps.json
+C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cs\matrix-cs\bin\Debug\netcoreapp3.1\matrix-cs.runtimeconfig.json
+C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cs\matrix-cs\bin\Debug\netcoreapp3.1\matrix-cs.runtimeconfig.dev.json
+C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cs\matrix-cs\bin\Debug\netcoreapp3.1\matrix-cs.dll
+C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cs\matrix-cs\bin\Debug\netcoreapp3.1\matrix-cs.pdb
+C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cs\matrix-cs\obj\Debug\netcoreapp3.1\matrix-cs.csprojAssemblyReference.cache
+C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cs\matrix-cs\obj\Debug\netcoreapp3.1\matrix-cs.AssemblyInfoInputs.cache
+C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cs\matrix-cs\obj\Debug\netcoreapp3.1\matrix-cs.AssemblyInfo.cs
+C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cs\matrix-cs\obj\Debug\netcoreapp3.1\matrix-cs.csproj.CoreCompileInputs.cache
+C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cs\matrix-cs\obj\Debug\netcoreapp3.1\matrix-cs.dll
+C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cs\matrix-cs\obj\Debug\netcoreapp3.1\matrix-cs.pdb
+C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cs\matrix-cs\obj\Debug\netcoreapp3.1\matrix-cs.genruntimeconfig.cache
