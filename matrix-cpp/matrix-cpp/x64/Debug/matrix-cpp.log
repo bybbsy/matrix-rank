@@ -1,16 +1,11 @@
 ﻿  matrix-cpp.cpp
-C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(186,9): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "1" имеет тип "unsigned __int64"
-C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(186,9): message : рекомендуется использовать "%zd" в строке форматирования
-C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(140,24): warning C4101: v: неиспользованная локальная переменная
-C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(140,15): warning C4101: N: неиспользованная локальная переменная
-C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(140,12): warning C4101: r: неиспользованная локальная переменная
-C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(243,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(278,9): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "5" имеет тип "_Rep"
+C:\Users\crysi\Desktop\ПМиА\Курсач\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(277,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\crysi\Desktop\ПМиА\Курсач\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(371,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 5 has type '_Rep'
           with
           [
               _Rep=__int64
           ]
-C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(278,9): message : рекомендуется использовать "%lld" в строке форматирования
-C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(278,9): message : рекомендуется использовать "%Id" в строке форматирования
-C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(278,9): message : рекомендуется использовать "%I64d" в строке форматирования
-  matrix-cpp.vcxproj -> C:\Users\MEGATRON\Desktop\ПМиА\matrix-rank\matrix-cpp\x64\Debug\matrix-cpp.exe
+C:\Users\crysi\Desktop\ПМиА\Курсач\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(371,9): message : consider using '%lld' in the format string
+C:\Users\crysi\Desktop\ПМиА\Курсач\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(371,9): message : consider using '%Id' in the format string
+C:\Users\crysi\Desktop\ПМиА\Курсач\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(371,9): message : consider using '%I64d' in the format string
+  matrix-cpp.vcxproj -> C:\Users\crysi\Desktop\ПМиА\Курсач\matrix-rank\matrix-cpp\x64\Debug\matrix-cpp.exe
