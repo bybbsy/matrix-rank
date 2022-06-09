@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"sync"
+	"time"
 )
 
 const n = 10
@@ -24,7 +25,7 @@ var mat = [n][m]float64{
 	{10.0, 5.0, -2.0, -1.0},
 	{12.0, 1.0, -2.0, 10.0}}
 
-func displayMatrix(mat [n][m]float64) {
+func displayMatrix(mat *[n][m]float64) {
 	for i := 0; i < n; i++ {
 		for j := 0; j < m; j++ {
 			fmt.Printf("%.2f ", mat[i][j])
@@ -74,6 +75,27 @@ func bubbleSort(mat *[n][m]float64) {
 			}
 		}
 	}
+}
+
+func getRank(copy [n][m]float64) int {
+	R := 0
+	z := 0
+
+	for i := 0; i < n; i++ {
+		c := 0
+		for j := 0; j < m; j++ {
+			if copy[i][j] == 0 {
+				c++
+			}
+		}
+		if c == m {
+			z++
+		}
+	}
+
+	R = n - z
+
+	return R
 }
 
 func getLeadItem(q int, mat *[n][m]float64) int {
@@ -130,7 +152,7 @@ func gauss(copy *[n][m]float64) int {
 				if j == k && copy[q][k] != 0 {
 					div := math.Round((float64(copy[q][k])/float64(copy[i][k]))*100) / 100
 
-					fmt.Printf("%g", div)
+					// fmt.Printf("%g", div)
 					for h := k; h < m; h++ {
 						res := math.Round((float64(copy[q][h])-float64(div)*float64(copy[i][h]))*100) / 100
 						copy[q][h] = float64(res)
@@ -142,11 +164,6 @@ func gauss(copy *[n][m]float64) int {
 		bubbleSort(copy)
 	}
 
-	for i := 0; i < n; i++ {
-		for j := 0; j < m; j++ {
-			fmt.Printf("mat[%d][%d] = %d\n", i, j, copy[i][j])
-		}
-	}
 	//displayMatrix(copy);
 	R := 0
 	z := 0
@@ -170,6 +187,7 @@ func gauss(copy *[n][m]float64) int {
 
 func gauss_thread(copy *[n][m]float64, wg *sync.WaitGroup) {
 	// mut.Lock()
+
 	if copy[0][0] > 1 || copy[0][0] < -1 {
 		init := copy[0][0]
 
@@ -213,6 +231,7 @@ func gauss_thread(copy *[n][m]float64, wg *sync.WaitGroup) {
 		remainder := (n - i - 1) % maxThreads
 
 		var w sync.WaitGroup
+
 		w.Add(2)
 		for t := 0; t < maxThreads; t++ {
 
@@ -221,39 +240,21 @@ func gauss_thread(copy *[n][m]float64, wg *sync.WaitGroup) {
 		}
 
 		w.Wait()
+
+		bubbleSort(copy)
 	}
 
-	fmt.Printf("\nBan%g\n", copy[2][1])
+	// fmt.Printf("\nBan%g\n", copy[2][1])
 
 }
 
-func getRank(copy [n][m]float64) int {
-	R := 0
-	z := 0
-
-	for i := 0; i < n; i++ {
-		c := 0
-		for j := 0; j < m; j++ {
-			if copy[i][j] == 0 {
-				c++
-			}
-		}
-		if c == m {
-			z++
-		}
-	}
-
-	R = n - z
-
-	return R
-}
 func gauss_calc_rows(i int, k int, t int, chunk int, remainder int, copy *[n][m]float64, wg *sync.WaitGroup) {
 
 	if remainder > 0 {
 		chunk += remainder
 		from := t*chunk + i + 1
 		to := t*chunk + chunk + i
-		fmt.Printf("From: %g To: %g\n", from, to)
+		// fmt.Printf("From: %g To: %g\n", from, to)
 		if to+1 < n {
 			to++
 		}
@@ -266,7 +267,7 @@ func gauss_calc_rows(i int, k int, t int, chunk int, remainder int, copy *[n][m]
 					for h := k; h < m; h++ {
 						res := math.Round((float64(copy[q][h])-float64(div)*float64(copy[i][h]))*100) / 100
 						// fmt.Printf("Res: %g\n", div)
-						copy[q][h] = float64(res)
+						copy[q][h] = res
 					}
 				}
 			}
@@ -296,12 +297,15 @@ func gauss_calc_rows(i int, k int, t int, chunk int, remainder int, copy *[n][m]
 
 func main() {
 
-	var wg sync.WaitGroup
+	// var wg sync.WaitGroup
 
-	gauss_thread(&mat, &wg)
+	t := time.Now()
+	// gauss_thread(&mat, &wg)
 
-	rank := getRank(mat)
+	// rank := getRank(mat)
 
-	displayMatrix(mat)
-	fmt.Printf("Rank: %d\n", rank)
+	rank := gauss(&mat)
+
+	// displayMatrix(&mat)
+	fmt.Printf("Rank: %d Runtime: %d\n", rank, time.Since(t).Milliseconds())
 }
