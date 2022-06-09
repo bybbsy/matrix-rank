@@ -8,23 +8,24 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\MEGATRON\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\crysi\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MEGATRON\\Desktop\\ПМиА\\matrix-rank\\matrix-cs\\matrix-cs\\matrix-cs.csproj",
+      "projectUniqueName": "C:\\Users\\crysi\\Desktop\\ПМиА\\Курсач\\matrix-rank\\matrix-cs\\matrix-cs\\matrix-cs.csproj",
       "projectName": "matrix-cs",
-      "projectPath": "C:\\Users\\MEGATRON\\Desktop\\ПМиА\\matrix-rank\\matrix-cs\\matrix-cs\\matrix-cs.csproj",
-      "packagesPath": "C:\\Users\\MEGATRON\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MEGATRON\\Desktop\\ПМиА\\matrix-rank\\matrix-cs\\matrix-cs\\obj\\",
+      "projectPath": "C:\\Users\\crysi\\Desktop\\ПМиА\\Курсач\\matrix-rank\\matrix-cs\\matrix-cs\\matrix-cs.csproj",
+      "packagesPath": "C:\\Users\\crysi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\crysi\\Desktop\\ПМиА\\Курсач\\matrix-rank\\matrix-cs\\matrix-cs\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\MEGATRON\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\crysi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -64,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

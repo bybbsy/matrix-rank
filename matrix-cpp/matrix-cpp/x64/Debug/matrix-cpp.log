@@ -1,11 +1,13 @@
 ﻿  matrix-cpp.cpp
-C:\Users\crysi\Desktop\ПМиА\Курсач\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(277,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\crysi\Desktop\ПМиА\Курсач\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(371,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 5 has type '_Rep'
+C:\Users\crysi\Desktop\ПМиА\Курсач\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(302,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\crysi\Desktop\ПМиА\Курсач\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(559,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\crysi\Desktop\ПМиА\Курсач\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(658,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\crysi\Desktop\ПМиА\Курсач\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(804,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 5 has type '_Rep'
           with
           [
               _Rep=__int64
           ]
-C:\Users\crysi\Desktop\ПМиА\Курсач\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(371,9): message : consider using '%lld' in the format string
-C:\Users\crysi\Desktop\ПМиА\Курсач\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(371,9): message : consider using '%Id' in the format string
-C:\Users\crysi\Desktop\ПМиА\Курсач\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(371,9): message : consider using '%I64d' in the format string
+C:\Users\crysi\Desktop\ПМиА\Курсач\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(804,9): message : consider using '%lld' in the format string
+C:\Users\crysi\Desktop\ПМиА\Курсач\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(804,9): message : consider using '%Id' in the format string
+C:\Users\crysi\Desktop\ПМиА\Курсач\matrix-rank\matrix-cpp\matrix-cpp\matrix-cpp.cpp(804,9): message : consider using '%I64d' in the format string
   matrix-cpp.vcxproj -> C:\Users\crysi\Desktop\ПМиА\Курсач\matrix-rank\matrix-cpp\x64\Debug\matrix-cpp.exe
