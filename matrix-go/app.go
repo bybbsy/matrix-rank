@@ -1,34 +1,29 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"log"
 	"math"
-	"os"
-	"strconv"
-	"strings"
 	"sync"
 	"time"
 )
 
-const n = 500
-const m = 100
+const n = 10
+const m = 4
 const maxThreads = 2
 
 var mut sync.Mutex
 
-// var mat = [n][m]float64{
-// 	{1.0, 7.0, -1.0, -2.0},
-// 	{1.0, 1.0, -3.0, 10.0},
-// 	{2.0, 2.0, -1.0, -5.0},
-// 	{1.0, 4.0, 2.0, 1.0},
-// 	{3.0, 7.0, -1.0, -2.0},
-// 	{5.0, 4.0, 2.0, 1.0},
-// 	{7.0, 1.0, -2.0, -1.0},
-// 	{1.0, 5.0, 1.0, 1.0},
-// 	{10.0, 5.0, -2.0, -1.0},
-// 	{12.0, 1.0, -2.0, 10.0}}
+var mat = [][]float64{
+	{1.0, 7.0, -1.0, -2.0},
+	{1.0, 1.0, -3.0, 10.0},
+	{2.0, 2.0, -1.0, -5.0},
+	{1.0, 4.0, 2.0, 1.0},
+	{3.0, 7.0, -1.0, -2.0},
+	{5.0, 4.0, 2.0, 1.0},
+	{7.0, 1.0, -2.0, -1.0},
+	{1.0, 5.0, 1.0, 1.0},
+	{10.0, 5.0, -2.0, -1.0},
+	{12.0, 1.0, -2.0, 10.0}}
 
 // var mat [][]float64
 
@@ -245,7 +240,6 @@ func gauss_thread(copy *[][]float64, wg *sync.WaitGroup) {
 		}
 
 		wg.Wait()
-
 		bubbleSort(copy)
 	}
 
@@ -254,12 +248,14 @@ func gauss_thread(copy *[][]float64, wg *sync.WaitGroup) {
 }
 
 func gauss_calc_rows(i int, k int, t int, chunk int, remainder int, copy *[][]float64, wg *sync.WaitGroup) {
-
+	defer wg.Done()
 	if remainder > 0 {
 		chunk += remainder
 		from := t*chunk + i + 1
 		to := t*chunk + chunk + i
-		// fmt.Printf("From: %g To: %g\n", from, to)
+
+		fmt.Printf("From: %g To: %g\n", from, to)
+
 		if to+1 < n {
 			to++
 		}
@@ -272,7 +268,7 @@ func gauss_calc_rows(i int, k int, t int, chunk int, remainder int, copy *[][]fl
 					for h := k; h < m; h++ {
 						res := math.Round((float64((*copy)[q][h])-float64(div)*float64((*copy)[i][h]))*100) / 100
 						// fmt.Printf("Res: %g\n", div)
-						(*copy)[q][h] = res
+						(*copy)[q][h] = float64(res)
 					}
 				}
 			}
@@ -280,7 +276,7 @@ func gauss_calc_rows(i int, k int, t int, chunk int, remainder int, copy *[][]fl
 	} else {
 		from := t*chunk + i + 1
 		to := t*chunk + chunk + i
-
+		fmt.Printf("From: %g To: %g\n", from, to)
 		for q := from; q < to; q++ {
 			for j := 0; j < m; j++ {
 				if j == k && (*copy)[q][k] != 0 {
@@ -296,47 +292,45 @@ func gauss_calc_rows(i int, k int, t int, chunk int, remainder int, copy *[][]fl
 		}
 	}
 
-	wg.Done()
-
 }
 
 func main() {
-	f, err := os.Open("arr100.txt")
+	// f, err := os.Open("arr100.txt")
 
-	if err != nil {
-		log.Fatal(err)
-	}
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 
-	defer f.Close()
+	// defer f.Close()
 
-	scanner := bufio.NewScanner(f)
+	// scanner := bufio.NewScanner(f)
 
-	var mat [][]float64
+	// var mat [][]float64
 
-	for scanner.Scan() {
-		records := strings.Fields(scanner.Text())
-		line := make([]float64, len(records))
-		mat = append(mat, line)
-		for i := range records {
-			line[i], err = strconv.ParseFloat(records[i], 64)
-			if err != nil {
-				panic(err)
-			}
-		}
-	}
-	if err = scanner.Err(); err != nil {
-		panic(err)
-	}
+	// for scanner.Scan() {
+	// 	records := strings.Fields(scanner.Text())
+	// 	line := make([]float64, len(records))
+	// 	mat = append(mat, line)
+	// 	for i := range records {
+	// 		line[i], err = strconv.ParseFloat(records[i], 64)
+	// 		if err != nil {
+	// 			panic(err)
+	// 		}
+	// 	}
+	// }
+	// if err = scanner.Err(); err != nil {
+	// 	panic(err)
+	// }
 
-	fmt.Println(len(mat))
+	// fmt.Println(mat[500][0])
 	var wg sync.WaitGroup
 
 	t := time.Now()
-	// gauss_thread(&mat, &wg)
-
-	// rank := getRank(mat)
+	gauss_thread(&mat, &wg)
 
 	rank := getRank(&mat)
-	// displayMatrix(&mat)
+
+	// rank := gauss(&mat)
+	displayMatrix(&mat)
 	fmt.Printf("Rank: %d Runtime: %d\n", rank, time.Since(t).Milliseconds())
 }
